@@ -25,5 +25,7 @@ else:
     time.sleep(3)
     GPIO.output(4,True)
     
-    
+except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the flowing code will be  executed.
+    GPIO.output(LedPin, GPIO.HIGH)     # led off
+    GPIO.cleanup()                     # Release resource    
 
