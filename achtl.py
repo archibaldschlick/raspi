@@ -21,6 +21,3 @@ while count>0:
             GPIO.output(i,True)
 	count = count -1		
 
-except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the flowing code will be  executed.
-    GPIO.output(LedPin, GPIO.HIGH)     # led off
-    GPIO.cleanup()                     # Release resource   

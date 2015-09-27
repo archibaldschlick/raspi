@@ -11,6 +11,3 @@ while True:
     GPIO.output(17,GPIO.input(18))
     time.sleep(1.05)
 
-except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the flowing code will be  executed.
-    GPIO.output(LedPin, GPIO.HIGH)     # led off
-    GPIO.cleanup()                     # Release resource   
