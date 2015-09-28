@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import RPi.GPIO as GPIO
-import time
 
 buttonPin = 13
 ledGreenPin = 11
@@ -13,17 +12,16 @@ def setup():
 	GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 	GPIO.output(ledGreenPin, GPIO.HIGH)
 	GPIO.output(ledRedPin, GPIO.HIGH)
-	
 def loop():
 	while True: 
 		if GPIO.input(buttonPin) == GPIO.LOW:
 		   print '...red led on'
 		   GPIO.output(ledRedPin, GPIO.LOW)
 		   GPIO.output(ledGreenPin, GPIO.HIGH)
-	else: 
-		print 'green led on...'
-		GPIO.output(ledGreenPin, GPIO.LOW)
-		GPIO.output(ledRedPin, GPIO.HIGH)
+		else: 
+			print 'green led on...'
+			GPIO.output(ledGreenPin, GPIO.LOW)
+			GPIO.output(ledRedPin, GPIO.HIGH)
 
 def destroy():
 	GPIO.output(ledGreenPin, GPIO.HIGH)
